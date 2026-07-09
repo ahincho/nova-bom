@@ -7,36 +7,36 @@
     <parent>
         <groupId>pe.edu.nova.java</groupId>
         <artifactId>nova-bom</artifactId>
-        <version>1.0.0</version>
+        <version>0.1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>nova-micronaut-bom</artifactId>
+    <artifactId>nova-quarkus-bom</artifactId>
     <packaging>pom</packaging>
 
-    <name>Nova Platform Micronaut BOM</name>
-    <description>BOM para proyectos Micronaut. Extiende el BOM raíz con versiones de Micronaut y módulos internos. (Placeholder — por implementar)</description>
+    <name>Nova Platform Quarkus BOM</name>
+    <description>BOM para proyectos Quarkus. Extiende el BOM raíz con versiones de Quarkus y extensions internas. (Placeholder — por implementar)</description>
 
     <properties>
-        <!-- Micronaut (por definir cuando se implemente) -->
-        <!-- <micronaut.version>4.x</micronaut.version> -->
+        <!-- Quarkus (por definir cuando se implemente) -->
+        <!-- <quarkus.version>3.x</quarkus.version> -->
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <!-- BOM raíz (librerías puras) — heredado vía parent -->
 
-            <!-- BOM de Micronaut (por implementar) -->
+            <!-- BOM de Quarkus (por implementar) -->
             <!--
             <dependency>
-                <groupId>io.micronaut.platform</groupId>
-                <artifactId>micronaut-platform</artifactId>
-                <version>${micronaut.version}</version>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             -->
 
-            <!-- Módulos internos Nova Platform para Micronaut (por implementar) -->
+            <!-- Extensions internas Nova Platform para Quarkus (por implementar) -->
         </dependencies>
     </dependencyManagement>
 
