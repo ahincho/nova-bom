@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>pe.edu.nova.java</groupId>
+        <artifactId>nova-bom</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>nova-spring-boot-bom</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Nova Platform Spring Boot BOM</name>
+    <description>BOM para proyectos Spring Boot. Extiende el BOM raíz con versiones de Spring Boot y starters internos.</description>
+
+    <properties>
+        <!-- Spring Boot -->
+        <spring-boot.version>4.0.5</spring-boot.version>
+        <!-- Starters internos -->
+        <mask-utils-spring-boot-starter.version>1.0.0</mask-utils-spring-boot-starter.version>
+        <api-standard-spring-boot-starter.version>1.0.0</api-standard-spring-boot-starter.version>
+        <nova-spring-boot-starter.version>1.0.0</nova-spring-boot-starter.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- BOM Raíz (Librerías) — Heredado vía parent -->
+            <!-- BOM de Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Starters internos Nova Platform para Spring Boot -->
+            <dependency>
+                <groupId>pe.edu.nova.java.starters</groupId>
+                <artifactId>mask-utils-spring-boot-starter</artifactId>
+                <version>${mask-utils-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pe.edu.nova.java.starters</groupId>
+                <artifactId>api-standard-spring-boot-starter</artifactId>
+                <version>${api-standard-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pe.edu.nova.java.starters</groupId>
+                <artifactId>nova-spring-boot-starter</artifactId>
+                <version>${nova-spring-boot-starter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

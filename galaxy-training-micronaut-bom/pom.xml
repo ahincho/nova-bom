@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>pe.edu.nova.java</groupId>
+        <artifactId>nova-bom</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>nova-micronaut-bom</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Nova Platform Micronaut BOM</name>
+    <description>BOM para proyectos Micronaut. Extiende el BOM raíz con versiones de Micronaut y módulos internos. (Placeholder — por implementar)</description>
+
+    <properties>
+        <!-- Micronaut (por definir cuando se implemente) -->
+        <!-- <micronaut.version>4.x</micronaut.version> -->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- BOM raíz (librerías puras) — heredado vía parent -->
+
+            <!-- BOM de Micronaut (por implementar) -->
+            <!--
+            <dependency>
+                <groupId>io.micronaut.platform</groupId>
+                <artifactId>micronaut-platform</artifactId>
+                <version>${micronaut.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            -->
+
+            <!-- Módulos internos Nova Platform para Micronaut (por implementar) -->
+        </dependencies>
+    </dependencyManagement>
+
+</project>

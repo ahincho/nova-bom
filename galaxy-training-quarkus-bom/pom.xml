@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>pe.edu.nova.java</groupId>
+        <artifactId>nova-bom</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>nova-quarkus-bom</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Nova Platform Quarkus BOM</name>
+    <description>BOM para proyectos Quarkus. Extiende el BOM raíz con versiones de Quarkus y extensions internas. (Placeholder — por implementar)</description>
+
+    <properties>
+        <!-- Quarkus (por definir cuando se implemente) -->
+        <!-- <quarkus.version>3.x</quarkus.version> -->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- BOM raíz (librerías puras) — heredado vía parent -->
+
+            <!-- BOM de Quarkus (por implementar) -->
+            <!--
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            -->
+
+            <!-- Extensions internas Nova Platform para Quarkus (por implementar) -->
+        </dependencies>
+    </dependencyManagement>
+
+</project>

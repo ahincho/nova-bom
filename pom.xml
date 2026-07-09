@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pe.edu.nova.java</groupId>
+    <artifactId>nova-bom</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>Nova Platform BOM</name>
+    <description>BOM raíz que centraliza las versiones de las librerías puras de Nova Platform. Agnóstico al framework.</description>
+
+    <modules>
+        <module>nova-spring-boot-bom</module>
+        <module>nova-quarkus-bom</module>
+        <module>nova-micronaut-bom</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Versiones de librerías internas -->
+        <mask-utils.version>1.0.0</mask-utils.version>
+        <date-utils.version>1.0.0</date-utils.version>
+        <mapper-utils.version>1.0.0</mapper-utils.version>
+        <api-standard.version>1.0.0</api-standard.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Librerías internas Nova Platform -->
+            <dependency>
+                <groupId>pe.edu.nova.java.libs</groupId>
+                <artifactId>mask-utils</artifactId>
+                <version>${mask-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pe.edu.nova.java.libs</groupId>
+                <artifactId>date-utils</artifactId>
+                <version>${date-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pe.edu.nova.java.libs</groupId>
+                <artifactId>mapper-utils</artifactId>
+                <version>${mapper-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pe.edu.nova.java.libs</groupId>
+                <artifactId>api-standard</artifactId>
+                <version>${api-standard.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Distribution Management — GitHub Packages -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/OWNER/nova-bom</url>
+        </repository>
+    </distributionManagement>
+
+</project>
