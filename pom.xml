@@ -21,10 +21,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Versiones de librerías internas -->
-        <mask-utils.version>1.0.0</mask-utils.version>
-        <date-utils.version>1.0.0</date-utils.version>
-        <mapper-utils.version>1.0.0</mapper-utils.version>
-        <api-standard.version>1.0.0</api-standard.version>
+        <mask-utils.version>0.1.0-SNAPSHOT</mask-utils.version>
+        <date-utils.version>0.1.0-SNAPSHOT</date-utils.version>
+        <mapper-utils.version>0.1.0-SNAPSHOT</mapper-utils.version>
+        <api-standard.version>0.1.0-SNAPSHOT</api-standard.version>
     </properties>
 
     <dependencyManagement>
@@ -57,7 +57,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/OWNER/nova-bom</url>
+            <url>https://maven.pkg.github.com/ahincho/nova-bom</url>
         </repository>
     </distributionManagement>
 
