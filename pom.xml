@@ -31,26 +31,28 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Librerías internas Nova Platform -->
+            <!-- Librerías internas Nova Platform (versiones literales para que Gradle
+                 no dependa de la interpolación de properties del parent POM, que
+                 no es 100% fiable cross-bom inheritance). -->
             <dependency>
                 <groupId>pe.edu.nova.java.libs</groupId>
                 <artifactId>nova-mask-utils</artifactId>
-                <version>${mask-utils.version}</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>pe.edu.nova.java.libs</groupId>
                 <artifactId>nova-date-utils</artifactId>
-                <version>${date-utils.version}</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>pe.edu.nova.java.libs</groupId>
                 <artifactId>nova-mapper-utils</artifactId>
-                <version>${mapper-utils.version}</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>pe.edu.nova.java.libs</groupId>
                 <artifactId>nova-api-standard</artifactId>
-                <version>${api-standard.version}</version>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

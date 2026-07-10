@@ -38,26 +38,27 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- Starters internos Nova Platform para Spring Boot -->
+            <!-- Starters internos Nova Platform para Spring Boot (versiones literales
+                 para evitar depender de la interpolación de properties del parent POM). -->
             <dependency>
                 <groupId>pe.edu.nova.java.starters</groupId>
                 <artifactId>nova-mask-starter</artifactId>
-                <version>${mask-utils-spring-boot-starter.version}</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>pe.edu.nova.java.starters</groupId>
                 <artifactId>nova-api-standard-starter</artifactId>
-                <version>${api-standard-spring-boot-starter.version}</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>pe.edu.nova.java.starters</groupId>
                 <artifactId>nova-observability-starter</artifactId>
-                <version>${observability-spring-boot-starter.version}</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>pe.edu.nova.java.starters</groupId>
                 <artifactId>nova-spring-boot-starter</artifactId>
-                <version>${nova-spring-boot-starter.version}</version>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
