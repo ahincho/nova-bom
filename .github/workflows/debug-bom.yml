@@ -22,8 +22,8 @@ jobs:
           echo ""
           echo "Deleting 1.0.0 versions..."
           for pkg in nova-bom nova-spring-boot-bom nova-quarkus-bom nova-micronaut-bom; do
-            echo "--- deleting $pkg:1.0.0 ---"
-            IDS=$(gh api "/users/ahincho/packages/maven/pe.edu.nova.java.$pkg/versions" --jq '.[] | select(.name == "1.0.0") | .id' 2>/dev/null)
+            echo "--- deleting $pkg:1.0.1 ---"
+            IDS=$(gh api "/users/ahincho/packages/maven/pe.edu.nova.java.$pkg/versions" --jq '.[] | select(.name == "1.0.1") | .id' 2>/dev/null)
             for id in $IDS; do
               echo "  deleting id=$id"
               gh api --method DELETE "/users/ahincho/packages/maven/pe.edu.nova.java.$pkg/versions/$id" \
