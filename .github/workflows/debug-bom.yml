@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: delete
+      packages: write
     steps:
       - name: Delete stale BOM 1.0.0 versions
         env:
