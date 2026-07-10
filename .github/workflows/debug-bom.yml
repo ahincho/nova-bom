@@ -9,16 +9,17 @@ jobs:
       contents: read
       packages: read
     steps:
-      - name: Download and print published BOMs
+      - name: Download and inspect
         run: |
           echo "=========================================="
-          echo "nova-bom:1.0.0 POM content"
+          echo "nova-mapper-utils maven-metadata.xml"
           echo "=========================================="
           curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://maven.pkg.github.com/ahincho/nova-bom/pe/edu/nova/java/nova-bom/1.0.0/nova-bom-1.0.0.pom"
+            "https://maven.pkg.github.com/ahincho/nova-java-mapper-utils/pe/edu/nova/java/libs/nova-mapper-utils/maven-metadata.xml"
           echo ""
           echo "=========================================="
-          echo "nova-spring-boot-bom:1.0.0 POM content"
+          echo "nova-java-mapper-utils listed versions (API)"
           echo "=========================================="
-          curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://maven.pkg.github.com/ahincho/nova-bom/pe/edu/nova/java/nova-spring-boot-bom/1.0.0/nova-spring-boot-bom-1.0.0.pom"
+          gh api /users/ahincho/packages/maven/pe.edu.nova.java.libs.nova-mapper-utils/versions --jq '.[] | .name' 2>/dev/null || echo "API unavailable"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
