@@ -25,7 +25,7 @@
         <mask-utils.version>0.1.0-SNAPSHOT</mask-utils.version>
         <date-utils.version>0.1.0-SNAPSHOT</date-utils.version>
         <mapper-utils.version>0.1.0-SNAPSHOT</mapper-utils.version>
-        <api-standard.version>1.0.0</api-standard.version>
+        <api-standard.version>0.1.0-SNAPSHOT</api-standard.version>
     </properties>
 
     <dependencyManagement>
