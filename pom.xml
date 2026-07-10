@@ -23,10 +23,9 @@
         <!-- Versiones de librerías internas -->
         <!-- artifactId real = rootProject.name en cada settings.gradle.kts (NOVA-SEMVER-31: nombre repo != artifactId) -->
         <!-- Versiones reales publicadas en GitHub Packages el 2026-07-10 (ver §11.9.15). -->
-        <!-- mapper-utils.version queda en SNAPSHOT: bloqueado por un problema de secret propio del repo, aun sin publicar. -->
         <mask-utils.version>1.0.0</mask-utils.version>
         <date-utils.version>1.0.0</date-utils.version>
-        <mapper-utils.version>0.1.0-SNAPSHOT</mapper-utils.version>
+        <mapper-utils.version>1.0.0</mapper-utils.version>
         <api-standard.version>1.0.0</api-standard.version>
     </properties>
 
