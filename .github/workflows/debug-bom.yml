@@ -9,17 +9,26 @@ jobs:
       contents: read
       packages: read
     steps:
-      - name: Download and inspect
+      - name: Download and inspect BOMs
         run: |
           echo "=========================================="
-          echo "nova-mapper-utils maven-metadata.xml"
+          echo "Listing ALL maven packages for ahincho"
           echo "=========================================="
-          curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://maven.pkg.github.com/ahincho/nova-java-mapper-utils/pe/edu/nova/java/libs/nova-mapper-utils/maven-metadata.xml"
+          gh api /orgs/ahincho/packages?package_type=maven --jq '.[] | .name' 2>/dev/null || \
+          gh api /users/ahincho/packages?package_type=maven --jq '.[] | .name' 2>/dev/null || \
+            echo "API unavailable (no packages:read scope)"
           echo ""
           echo "=========================================="
-          echo "nova-java-mapper-utils listed versions (API)"
+          echo "Looking for any 0.1.0-SNAPSHOT nova-* packages"
           echo "=========================================="
-          gh api /users/ahincho/packages/maven/pe.edu.nova.java.libs.nova-mapper-utils/versions --jq '.[] | .name' 2>/dev/null || echo "API unavailable"
+          for pkg in nova-bom nova-spring-boot-bom nova-quarkus-bom nova-micronaut-bom nova-mapper-utils nova-date-utils nova-mask-utils nova-api-standard; do
+            gh api "/users/ahincho/packages/maven/pe.edu.nova.java.nova-bom/versions" --jq '.[] | select(.name | contains("0.1")) | .name' 2>/dev/null && echo "$pkg has 0.1.x"
+          done
+          echo ""
+          echo "=========================================="
+          echo "nova-bom:1.0.0 POM (parent)"
+          echo "=========================================="
+          curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://maven.pkg.github.com/ahincho/nova-bom/pe/edu/nova/java/nova-bom/1.0.0/nova-bom-1.0.0.pom" | head -50
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
