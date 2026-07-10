@@ -20,10 +20,11 @@
         <!-- Spring Boot -->
         <spring-boot.version>4.0.5</spring-boot.version>
         <!-- Starters internos (artifactId real = rootProject.name, ver NOVA-SEMVER-31) -->
-        <mask-utils-spring-boot-starter.version>0.1.0-SNAPSHOT</mask-utils-spring-boot-starter.version>
-        <api-standard-spring-boot-starter.version>0.1.0-SNAPSHOT</api-standard-spring-boot-starter.version>
-        <observability-spring-boot-starter.version>0.1.0-SNAPSHOT</observability-spring-boot-starter.version>
-        <nova-spring-boot-starter.version>0.1.0-SNAPSHOT</nova-spring-boot-starter.version>
+        <!-- Versiones reales publicadas en GitHub Packages el 2026-07-10 (ver §11.9.15) -->
+        <mask-utils-spring-boot-starter.version>1.0.0</mask-utils-spring-boot-starter.version>
+        <api-standard-spring-boot-starter.version>1.0.0</api-standard-spring-boot-starter.version>
+        <observability-spring-boot-starter.version>1.0.0</observability-spring-boot-starter.version>
+        <nova-spring-boot-starter.version>1.0.0</nova-spring-boot-starter.version>
     </properties>
 
     <dependencyManagement>

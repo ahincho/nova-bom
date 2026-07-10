@@ -1,0 +1,15 @@
+name: Publish BOM
+
+# Manually triggered publish for nova-bom (and its submodules: nova-spring-boot-bom,
+# nova-quarkus-bom, nova-micronaut-bom). This repo has no release-please/CI pipeline
+# yet (known gap, tracked separately); this workflow only covers the minimal need of
+# publishing the BOM to GitHub Packages so that Gradle consumers (e.g.
+# nova-java-spring-boot-starter) can resolve pe.edu.nova.java:nova-spring-boot-bom.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    uses: ahincho/nova-devops/.github/workflows/reusable-publish-maven.yml@main
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
