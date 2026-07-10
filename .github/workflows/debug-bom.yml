@@ -1,0 +1,24 @@
+name: Debug BOM
+
+on: workflow_dispatch
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: Download and print published BOMs
+        run: |
+          echo "=========================================="
+          echo "nova-bom:1.0.0 POM content"
+          echo "=========================================="
+          curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://maven.pkg.github.com/ahincho/nova-bom/pe/edu/nova/java/nova-bom/1.0.0/nova-bom-1.0.0.pom"
+          echo ""
+          echo "=========================================="
+          echo "nova-spring-boot-bom:1.0.0 POM content"
+          echo "=========================================="
+          curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://maven.pkg.github.com/ahincho/nova-bom/pe/edu/nova/java/nova-spring-boot-bom/1.0.0/nova-spring-boot-bom-1.0.0.pom"
