@@ -14,29 +14,45 @@
     <packaging>pom</packaging>
 
     <name>Nova Platform Quarkus BOM</name>
-    <description>BOM para proyectos Quarkus. Extiende el BOM raíz con versiones de Quarkus y extensions internas. (Placeholder — por implementar)</description>
+    <description>BOM para proyectos Quarkus del meta-framework Nova. Importa el Quarkus upstream BOM (consenso del ecosistema: 3.33.2.1 LTS) y centraliza las versiones de las extensions internas Nova Platform.</description>
 
     <properties>
-        <!-- Quarkus (por definir cuando se implemente) -->
-        <!-- <quarkus.version>3.x</quarkus.version> -->
+        <!-- Quarkus LTS branch adopted by Nova (single source of truth across parent,
+             extensions, instances, demos). Override only if migrating the whole stack. -->
+        <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+        <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+        <quarkus.platform.version>3.33.2.1</quarkus.platform.version>
+
+        <!-- Internal Nova extensions. Versions are the canonical GH Packages coordinates. -->
+        <nova-notifications-quarkus-extension.version>1.1.6</nova-notifications-quarkus-extension.version>
+        <!-- Artifact rename from nova-api-standard-quarkus-extension to nova-quarkus-api-ext
+             was a workaround for the GitHub Packages maven-publish plugin + 20-char
+             artifactId limit. See docs/java/07-quarkus-analisis-adopcion.md §8. -->
+        <nova-quarkus-api-ext.version>1.0.1</nova-quarkus-api-ext.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- BOM raíz (librerías puras) — heredado vía parent -->
-
-            <!-- BOM de Quarkus (por implementar) -->
-            <!--
+            <!-- Upstream Quarkus BOM (consensus 3.33.2.1 LTS). -->
             <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-bom</artifactId>
-                <version>${quarkus.version}</version>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>${quarkus.platform.artifact-id}</artifactId>
+                <version>${quarkus.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            -->
 
-            <!-- Extensions internas Nova Platform para Quarkus (por implementar) -->
+            <!-- Internal Nova Platform Quarkus extensions. -->
+            <dependency>
+                <groupId>pe.edu.nova.java.starters</groupId>
+                <artifactId>nova-notifications-quarkus-extension</artifactId>
+                <version>${nova-notifications-quarkus-extension.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pe.edu.nova.java.starters</groupId>
+                <artifactId>nova-quarkus-api-ext</artifactId>
+                <version>${nova-quarkus-api-ext.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
